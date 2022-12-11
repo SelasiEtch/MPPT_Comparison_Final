@@ -10,40 +10,29 @@ Currently, the most efficient MPPT systems are those that employ a hybrid model 
 
 ## 3. Novelty & Rationale
 
-What is new in your approach and why do you think it will be successful?
-
 Rather than coming up with a new approach for MPPT, we decided to spend time assessing the feasibility of existing approaches (namely ANN and FIS when compared to classical MPPT methods) so that we can better understand their benefits and limitations. This venture should be successful, as there is a lot of existing literature that we can pull design ideas from.
 
 ## 4. Potential Impact
-
-If the project is successful, what difference will it make, both technically and broadly?
 
 If the project is successful, we will have generated added justification as to the use of artifical intelligence in MPPT use-cases. With the design of our neural network scheme, we will have also created a low-cost embedded irradiance sensor that can be used as a way to coordinate MPPT across large solar farms where conditions might not be entirely uniform due to environmental conditions (cloud-cover, etc).
 
 ## 5. Challenges
 
-What are the challenges and risks?
-
 There are a lot of challenges that we can see in the project. Being a hardware-heavy project, there are a lot of risks that stem from hardware failure (part shortages and lead-times) as well as time lost due to needed to constantly be around lab instrumentation for testing. In addition, maximum-power-point is a hard thing to quantify in solar panels without exact measurements of irradiance and temperature. Used as a control, a classical MPPT algorithm (namely Perturb & Observe) could give us accurate MPP estimation in ideal conditions, however in partially shaded environments P&O would not be a good control and our results would lose confidence (i.e. are our AI methods accurately judging MPP would no concrete reference to compare to).
 
 ## 6. Requirements for Success
 
-What skills and resources are necessary to perform the project?
 In order to successfully perform this project, each team member will need to have basic hardware prototyping skills, basic knowledge of power electronics,knowledge of implementing AI methods on embedded devices (namely FIS and ANN), and knowledge of require programmining languages (C++, Matlab).
 
 In terms of resources, we require embedded host devices (Arduino Nano 33 BLE Sense), dc-dc power converter hardware, sensors (voltage,current,and temperature), PV Panels, and access to lab instrumentation for testing both indoors and outdoors.
 
 ## 7. Metrics of Success
 
-What are metrics by which you would check for success?
-
 Given the nature of our comparison study, metrics that we would analyze for success include 
 1. MPP Convergence Speed (how fast does the system converge on it's maximum power point
 2. MPP Convergence Accuracy (how much error exists in the system's interpretation of MPP, and the actual MPP of the solar panel) 
 
 ## 8. Execution Plan
-
-Describe the key tasks in executing your project, and in case of team project describe how will you partition the tasks.
 
 The key tasks include:
 
