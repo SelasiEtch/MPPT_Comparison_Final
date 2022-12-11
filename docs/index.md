@@ -17,4 +17,4 @@ In this study, we implemented 3 MPPT control methods (Perturb & Observe as a con
 * [Proposal](proposal)
 * [Midterm Checkpoint Presentation Slides](http://)
 * [Final Presentation Slides](http://)
-* [Final Report](report)
+* [Final Report](report.md)
