@@ -150,16 +150,6 @@ The Neural Network was provided with 2000 datapoints of Voltage, Current, and Te
 (Discussion of this model can be found in [3]). A 2 layer feedforward network with 3 hidden layers was determined to be sufficient for our use-case, as we can see the in the neural network multivariate fitting results with 1 hidden layer, 2 hidden layers,and 3 hidden layers 
 
 
-<img src="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/NN_1_Hidden_Layer.png" alt="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/NN_1_Hidden_Layer.png">
-
-**Training Fit with 1 Hidden Layer** 
-
-
-<img src="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/NN_2_Hidden_Layers.png" alt="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/NN_2_Hidden_Layers.png">
-
-**Training Fit with 2 Hidden Layers**
-
-
 <img src="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/NN_3_Hidden_Layers.png" alt="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/NN_3_Hidden_Layers.png">
 
 **Training Fit with 3 Hidden Layers**
