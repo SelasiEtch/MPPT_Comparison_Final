@@ -144,11 +144,11 @@ The Neural Network was provided with 2000 datapoints of Voltage, Current, and Te
 
 Training Fit with 1 Hidden Layer 
 
-![NN 2 Hidden Layer](/docs/media/NN_2_Hidden_Layer.png) 
+![NN 2 Hidden Layer](/docs/media/NN_2_Hidden_Layers.png) 
 
 Training Fit with 2 Hidden Layers
 
-![NN 3 Hidden Layer](/docs/media/NN_3_Hidden_Layer.png)
+![NN 3 Hidden Layer](/docs/media/NN_3_Hidden_Layers.png)
 
 Training Fit with 3 Hidden Layers
 
