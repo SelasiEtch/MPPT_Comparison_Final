@@ -127,9 +127,10 @@ This classic algorithm perturbs the operating voltage to ensure maximum power. T
 Implementation:
 
 In this technique, our first step is to sample the PV voltage and current, and multiply to get instantaneous power. Instantaneous power is compared to and subtracted from the previous power sampled (difference is P). Similarly, V is found by subtracting the previous voltage sample from the current voltage sample. To check if we are moving closer to the system maximum power point we compare P and V. If both quantities are positive, then the slope (PV) is positive, indicating that we are on the left side and approaching MPP with an increase in PV voltage. Essentially, maximum power is achieved when PV=0 , and we perturb PV voltage in the opposite direction when PV< 0. 
+
 Results
 
-Closed Loop Perturb & Observe Test Video: (https://www.youtube.com/watch?v=P4zq_pb_fxU)
+<a href="https://www.youtube.com/watch?v=P4zq_pb_fxU"> Closed Loop Perturb & Observe Test Video </a>.
 
 *2. Artificial Neural Network*
 
@@ -168,7 +169,7 @@ The network employs regression tactics in order to learn its own mapping of the 
 Results:
 
 Seen in Figure 3, we test the accuracy of the neural network irradiance estimates on I-V curves that we were able to generate from datasheet values of our panel modules through Simulink’s SimScape PV Array Block. While not exact (we see about a 14% error), the irradiance estimates are in proximity to the actual values of irradiance for each I-V curve.
-Irradiance Estimator Test Video: (https://www.youtube.com/shorts/F8F-q0dnJ0A)
+<a href="https://www.youtube.com/shorts/F8F-q0dnJ0A"> Irradiance Estimator Test Video </a>.
 
 
 <img src="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/Figure_3.png" alt="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/Figure_3.png">
