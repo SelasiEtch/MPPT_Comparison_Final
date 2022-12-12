@@ -91,10 +91,10 @@ Figure 1: Standard Buck Converter Design
 
 Initially, our buck converter was made out of discrete parts, as is seen in Figure 1, however a lack of a gate driver IC to switch the transistor ‘S’ at high frequencies led us to search for more integrated options that would allow us to adjust the buck converter setpoint dynamically. Eventually we settled on using the Arduino Motor Driver Shield Rev3 and operating it as an adjustable PWM digital-to-analog converter that we could operate with a PWM signal and low-pass filter the output in order to achieve the same results.
 
+![Figure 2a](/docs/media/Figure_2_a.jpg) ![Figure 2b](/docs/media/Figure_2_b.jpg)
 
 Figure 2: High Level Schematic of Arduino Motor Driver Shield and Project Implementation 
-![Figure 2a](/docs/media/Figure_2_a.jpg)
-![Figure 2b](/docs/media/Figure_2_b.jpg)
+
 
 As you can see in Figure 2, by adjusting the motor driver to only operate in the forward position (meaning the top-right and top-left transistors will always be off) and shorting ‘Vout-’ to ground, we essentially reach that same buck converter design as in Figure 1 by attaching our low-pass filter between ‘Vout+’ and ground, and utilizing the motor protection diode of the bottom-left transistor as the freewheeling diode in our converter. Through testing, we found our that this design is not very useful to our cause as the input voltage (Vin) which is connected to the output of our solar panel requires a minimum of 6V for the motor driver to operate, leading us to connect a 9V battery in series to ensure that that the converter is able to operate even when the solar panels are shaded and their voltage drops. Here we have a video showcasing the buck converter’s operation with an input PWM signal (https://www.youtube.com/shorts/_8I-USZ9iXU PWM Signal - Yellow, Buck Output - Green).
 
