@@ -92,8 +92,8 @@ Initially, our buck converter was made out of discrete parts, as is seen in Figu
 
 
 Figure 2: High Level Schematic of Arduino Motor Driver Shield and Project Implementation 
-![Figure 2a](MPPT_Comparison_Final/docs/media/Figure_2_a.jpg)
-![Figure 2b](MPPT_Comparison_Final/docs/media/Figure_2_b.jpg)
+![Figure 2a](/docs/media/Figure_2_a.jpg)
+![Figure 2b](/docs/media/Figure_2_b.jpg)
 
 As you can see in Figure 2, by adjusting the motor driver to only operate in the forward position (meaning the top-right and top-left transistors will always be off) and shorting ‘Vout-’ to ground, we essentially reach that same buck converter design as in Figure 1 by attaching our low-pass filter between ‘Vout+’ and ground, and utilizing the motor protection diode of the bottom-left transistor as the freewheeling diode in our converter. Through testing, we found our that this design is not very useful to our cause as the input voltage (Vin) which is connected to the output of our solar panel requires a minimum of 6V for the motor driver to operate, leading us to connect a 9V battery in series to ensure that that the converter is able to operate even when the solar panels are shaded and their voltage drops. Here we have a video showcasing the buck converter’s operation with an input PWM signal (https://www.youtube.com/shorts/_8I-USZ9iXU PWM Signal - Yellow, Buck Output - Green).
 
@@ -125,7 +125,7 @@ Closed Loop Perturb & Observe Test Video: (https://www.youtube.com/watch?v=P4zq_
 
 2. Artificial Neural Network
 System Diagram: 
-![NN System Diagram](MPPT_Comparison_Final/docs/media/NN_Diagram.jpg)
+![NN System Diagram](/docs/media/NN_Diagram.jpg)
 
 Overview:
 
@@ -136,9 +136,9 @@ Implementation:
 The Neural Network was provided with 2000 datapoints of Voltage, Current, and Temperature that came from a MATLAB script working to solve the expanded form of the single diode solar cell IV model for Irradiance (‘G’) with random combinations of voltage, current, and temperature (IA,VA, and T)
 (Discussion of this model can be found in [3]). A 2 layer feedforward network with 3 hidden layers was determined to be sufficient for our use-case, as we can see the in the neural network multivariate fitting results with 1 hidden layer, 2 hidden layers,and 3 hidden layers 
 
-![NN 1 Hidden Layer](MPPT_Comparison_Final/docs/media/NN_1_Hidden_Layer.png)
-![NN 2 Hidden Layer](MPPT_Comparison_Final/docs/media/NN_2_Hidden_Layer.png)
-![NN 1 Hidden Layer](MPPT_Comparison_Final/docs/media/NN_3_Hidden_Layer.png)
+![NN 1 Hidden Layer](/docs/media/NN_1_Hidden_Layer.png)
+![NN 2 Hidden Layer](/docs/media/NN_2_Hidden_Layer.png)
+![NN 1 Hidden Layer](/docs/media/NN_3_Hidden_Layer.png)
 
 The network employs regression tactics in order to learn its own mapping of the input data to the desired irradiance output
 
@@ -149,11 +149,11 @@ Irradiance Estimator Test Video: (https://www.youtube.com/shorts/F8F-q0dnJ0A)
 
 
 Figure 3: Neural Network Irradiance Estimation Testing 
-![Figure 3](MPPT_Comparison_Final/docs/media/Figure_3.png)
+![Figure 3](/docs/media/Figure_3.png)
 
 3. Fuzzy Logic Inference System
 System Diagram: 
-![Fuzzy System Diagram](MPPT_Comparison_Final/docs/media/Fuzzy_Inference_Diagram.png)
+![Fuzzy System Diagram](/docs/media/Fuzzy_Inference_Diagram.png)
 
 Overview:
 
@@ -165,13 +165,13 @@ We constructed our FLC using MATLAB’s Fuzzy Logic toolbox, modeling our contro
 
 
 Figure 4: Rules for the Fuzzy Logic Controller 
-![Fuzzy Rules](MPPT_Comparison_Final/docs/media/Figure_4.png)
+![Fuzzy Rules](/docs/media/Figure_4.png)
 
 
 Figure 5: Membership Functions for the Fuzzy Logic Controller
-![Fuzzy Membership 1](MPPT_Comparison_Final/docs/media/Figure_5_a.png)
-![Fuzzy Membership 2](MPPT_Comparison_Final/docs/media/Figure_5_b.png)
-![Fuzzy Membership 3](MPPT_Comparison_Final/docs/media/Figure_5_c.png)
+![Fuzzy Membership 1](/docs/media/Figure_5_a.png)
+![Fuzzy Membership 2](/docs/media/Figure_5_b.png)
+![Fuzzy Membership 3](/docs/media/Figure_5_c.png)
 
 The voltage and current measurements that are used to generate the inputs to the FLC are collected by our sensors and are sent from the Arduino to MATLAB to be used in a Simulink model which employs our Fuzzy Logic controller. The FLC then gives us our duty cycle value and sends it back to the Arduino before the next iteration. The updates to our duty cycle assist us in moving towards the maximum power point. As a higher change in power corresponds to a higher error, we aim to observe the eventual reduction of that change in power to zero, as that occurs at the maximum value of the change in power over change in voltage.
 
