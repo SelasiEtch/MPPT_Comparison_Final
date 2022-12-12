@@ -140,7 +140,17 @@ Implementation:
 The Neural Network was provided with 2000 datapoints of Voltage, Current, and Temperature that came from a MATLAB script working to solve the expanded form of the single diode solar cell IV model for Irradiance (‘G’) with random combinations of voltage, current, and temperature (IA,VA, and T)
 (Discussion of this model can be found in [3]). A 2 layer feedforward network with 3 hidden layers was determined to be sufficient for our use-case, as we can see the in the neural network multivariate fitting results with 1 hidden layer, 2 hidden layers,and 3 hidden layers 
 
-![NN 1 Hidden Layer](/docs/media/NN_1_Hidden_Layer.png) ![NN 2 Hidden Layer](/docs/media/NN_2_Hidden_Layer.png) ![NN 1 Hidden Layer](/docs/media/NN_3_Hidden_Layer.png)
+![NN 1 Hidden Layer](/docs/media/NN_1_Hidden_Layer.png)
+
+Training Fit with 1 Hidden Layer 
+
+![NN 2 Hidden Layer](/docs/media/NN_2_Hidden_Layer.png) 
+
+Training Fit with 2 Hidden Layers
+
+![NN 3 Hidden Layer](/docs/media/NN_3_Hidden_Layer.png)
+
+Training Fit with 3 Hidden Layers
 
 The network employs regression tactics in order to learn its own mapping of the input data to the desired irradiance output
 
@@ -155,9 +165,11 @@ Figure 3: Neural Network Irradiance Estimation Testing
 
 
 3. Fuzzy Logic Inference System
-System Diagram: 
 
 ![Fuzzy System Diagram](/docs/media/Fuzzy_Inference_Diagram.png)
+
+System Diagram: 
+
 
 Overview:
 
