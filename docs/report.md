@@ -158,7 +158,7 @@ The network employs regression tactics in order to learn its own mapping of the 
 
 Results:
 
-Seen in Figure 3, we test the accuracy of the neural network irradiance estimates on I-V curves that we were able to generate from datasheet values of our panel modules through Simulink’s SimScape PV Array Block. While not exact (we see about a 14% error), the irradiance estimates are in proximity to the actual values of irradiance for each I-V curve.
+Seen in Figure 3, we test the accuracy of the neural network irradiance estimates on I-V curves that we were able to generate from datasheet values of our panel modules through Simulink’s SimScape PV Array Block. While not exact (we see about a 14% error), the irradiance estimates are in proximity to the actual values of irradiance for each I-V curve.It is important to note that the I-V curves shown are not an exact replica of our solar panel modules, and have a tolerance associated with the datasheet values used to create them in Simulink software.
 <a href="https://www.youtube.com/shorts/F8F-q0dnJ0A"> Irradiance Estimator Test Video </a>.
 
 
@@ -190,7 +190,7 @@ We constructed our FLC using MATLAB’s Fuzzy Logic toolbox, modeling our contro
 
 <img src="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/Figure_5_a.png" alt="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/Figure_5_a.png"><img src="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/Figure_5_b.png" alt="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/Figure_5_b.png"><img src="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/Figure_5_c.png" alt="https://raw.githubusercontent.com/SelasiEtch/MPPT_Comparison_Final/main/docs/media/Figure_5_c.png">
 
-Figure 5: Membership Functions for the Fuzzy Logic Controller
+**Figure 5: Membership Functions for the Fuzzy Logic Controller**
 
 
 The voltage and current measurements that are used to generate the inputs to the FLC are collected by our sensors and are sent from the Arduino to MATLAB to be used in a Simulink model which employs our Fuzzy Logic controller. The FLC then gives us our duty cycle value and sends it back to the Arduino before the next iteration. The updates to our duty cycle assist us in moving towards the maximum power point. As a higher change in power corresponds to a higher error, we aim to observe the eventual reduction of that change in power to zero, as that occurs at the maximum value of the change in power over change in voltage.
