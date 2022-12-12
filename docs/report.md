@@ -11,7 +11,7 @@
 
 In this project, we attempt to implement and run a comparison study on different methods for Maximum Power Point Tracking (MPPT) in solar panels, namely the accuracy and speed of widely used conventional algorithms such as ‘Perturb & Observe, compared to more novel methods that employ the use of approaches based on artificial intelligence (such as ‘Artificial Neural Networks’ and ‘Fuzzy Logic Inference’) in tracking a panel’s maximum power point.
 
-Maximum Power Point Trackers, no matter the methodology that they implement, operate on the principle of dynamic impedance matching. Effectively, for any given load impedance on a solar panel given by (V_load / I_load) where V_load is the voltage across the load and I_load is the current across the load, there is a corresponding source impedance of the panel (V_panel / I_panel) that would maximize power transfer to the load according to the theory of maximum power transfer. Maximum Power Point Tracking is the process of adding a DC-DC converter in between the solar panels and the load, which is meant to dynamically adjust the operating characteristics of the solar panel in order to force the delivery of maximum power to the load, even in the face of deviations in incident irradiance and temperature.
+Maximum Power Point Trackers, no matter the methodology that they use, operate on the principle of dynamic impedance matching. Effectively, for any given load impedance on a solar panel given by (V_load / I_load) where V_load is the voltage across the load and I_load is the current across the load, there is a corresponding source impedance of the panel (V_panel / I_panel) that would maximize power transfer to the load according to the theory of maximum power transfer. Maximum Power Point Tracking is the process of adding a DC-DC converter in between the solar panels and the load, which is meant to dynamically adjust the operating characteristics of the solar panel in order to force the delivery of maximum power to the load, even in the face of deviations in incident irradiance and temperature.
 
 In this study, we implemented 3 MPPT control methods (Perturb & Observe as a conventional method, as well as an Artificial Neural Network and Fuzzy Logic Inference System as AI driven methods), however due to lack of promising sunny weather conditions as well as hardware/software pitfalls we were not able to adequately test all of these control methods in a closed-loop environment. In this report, we will talk through our designs, results, and the promising future of the project given what we learned along the way.
 
@@ -23,7 +23,7 @@ In this study we are trying to evaluate and compare the convergence time and max
 
 ## 2. State of the Art & Its Limitations
 
-Currently, the most efficient MPPT systems are those that employ a hybrid model to merge artificial intelligence with optimization techniques; with a key example being ANFIS (Adaptive Neuro Fuzzy Inference System) which is essentially takes the key benefits of existing Fuzzy Inference Systems (FIS) (the ability to work with uncertain inputs and without complex mathematical models) and combines that with the accelerated learning capability of artificial neural networks (ANN) to (in real-time) optimize and detemine the fuzzy rules that drive the output of the system. The limits of the ANFIS approach are mainly due to how they gather their inputs. For ANFIS MPPT systems that rely on irradiance and temperature sensing, the cost of irradiance sensors can be costly; and in all cases the key tradeoff is design complexity.
+Currently, the most efficient MPPT systems are those that employ a hybrid model to merge artificial intelligence with optimization techniques; with a key example being ANFIS (Adaptive Neuro Fuzzy Inference System) which is essentially takes the key benefits of existing Fuzzy Inference Systems (FIS) (the ability to work with uncertain inputs and without complex mathematical models) and combines that with the accelerated learning capability of artificial neural networks (ANN) to (in real-time) optimize and detemine the fuzzy rules that drive the output of the system. The limits of the ANFIS approach are mainly due to how they gather their inputs. For ANFIS MPPT systems that rely on irradiance and temperature sensing, the cost of irradiance sensors can be costly; and in all cases the key tradeoff is with the improvements that it provides over most other approachesdesign complexity.
 
 ## 3. Novelty & Rationale
 
@@ -35,7 +35,7 @@ If the project is successful, we will have generated added justification as to t
 
 ## 5. Challenges
 
-There are a lot of challenges that we can see in the project. Being a hardware-heavy project, there are a lot of risks that stem from hardware failure (part shortages and lead-times) as well as time lost due to needed to constantly be around lab instrumentation for testing. In addition, maximum-power-point is a hard thing to quantify in solar panels without exact measurements of irradiance and temperature. Used as a control, a classical MPPT algorithm (namely Perturb & Observe) could give us accurate MPP estimation in ideal conditions, however in partially shaded environments P&O would not be a good control and our results would lose confidence (i.e. are our AI methods accurately judging MPP would no concrete reference to compare to).
+There are a lot of challenges that we can see in the project. Being a hardware-heavy project, there are a lot of risks that stem from hardware failure (part shortages and lead-times) as well as time lost due to needed to constantly be around lab instrumentation for testing. In addition, maximum-power-point is a hard thing to quantify in solar panels without exact measurements of irradiance and temperature. Used as a control, a classical MPPT algorithm (namely Perturb & Observe) could give us accurate MPP estimation in ideal conditions, however in partially shaded environments P&O would not be a good control and our results could lose confidence (i.e. a challenge becomes how we can safely say that our AI methods are operating at MPP when our control group fails due to its own limitations. In that case, our solution would be to compare the AI methods against each other in testing for partially shaded operation).
 
 ## 6. Requirements for Success
 
@@ -48,6 +48,8 @@ In terms of resources, we require embedded host devices (Arduino Nano 33 BLE Sen
 Given the nature of our comparison study, metrics that we would analyze for success include 
 1. MPP Convergence Speed (how fast does the system converge on it's maximum power point
 2. MPP Convergence Accuracy (how much error exists in the system's interpretation of MPP, and the actual MPP of the solar panel) 
+
+Actual MPP can be determined by the classical control method in nominal conditions, and under irrgular conditions (shading) we will instead provide a comparison of convergence speed as well as observed maximum power output of the two AI methods. 
 
 # 2. Related Work
 
@@ -225,10 +227,10 @@ Numerous cloudy and cold weather conditions in December/November limited our alr
 
 # 5. Discussion and Conclusions
 
-We’ve been able to verify that the AI Control Algorithms we undertook work as expected in an open-loop setting (not actively doing MPPT) but setbacks in hardware and software prevented (described above) prevented us being able to perform the comparison study that we initially set out to test; however we’ve learned valuable lessons that pave a path forward with improvements to the system 
+We’ve been able to verify that the AI Control Algorithms we undertook work as expected in an open-loop setting (not automatically making  MPPT adjustments on a solar panel) but setbacks in hardware and software prevented (described above) prevented us being able to perform the comparison study that we initially set out to test; however we’ve learned valuable lessons that pave a path forward with improvements to the system 
 
 Hardware Improvements: 
-Switching to a standard buck converter design with an adequate gate driver would be a key change. Our Motor Driver PWM DAC was a solution that we had laying around without the need to buy more parts, however the 6V minimum input voltage forced us to attach a battery in series with our panel,and necessitates substracting out the current/voltage error in the sensor data. In addition,an integrated PCB Design for hardware would improve usability and reduce efficiency reductions from breadboard parasitics and noise
+Switching to a standard buck converter design with an adequate gate driver would be a key change. Our Motor Driver PWM DAC was a solution that we had laying around without the need to buy more parts, however the 6V minimum input voltage forced us to attach a battery in series with our panel,and necessitates substracting out the current/voltage error in the sensor data in every measurement. In addition,an integrated PCB Design for hardware would improve usability and reduce efficiency reductions from breadboard parasitics and noise
 
 Software Improvements:
 Implementation of AI control methods on native embedded hardware would allow for a design more robust to latency and negates the serial link issues that we encountered towards the end of the quarter. Developing adequate simulation models of our control algorithms and hardware would would help us ensure that our approaches are conceptually sound before attemping to debug issues that might be the cause of a flawed approach.
