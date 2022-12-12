@@ -86,7 +86,7 @@ At the very core of this project is a DC-DC converter which bridges the gap betw
 
 
 Figure 1: Standard Buck Converter Design 
-![Figure 1](SelasiEtch/MPPT_Comparison_Final/docs/media/Figure_1.png)
+![Figure 1](/docs/media/Figure_1.png)
 
 Initially, our buck converter was made out of discrete parts, as is seen in Figure 1, however a lack of a gate driver IC to switch the transistor ‘S’ at high frequencies led us to search for more integrated options that would allow us to adjust the buck converter setpoint dynamically. Eventually we settled on using the Arduino Motor Driver Shield Rev3 and operating it as an adjustable PWM digital-to-analog converter that we could operate with a PWM signal and low-pass filter the output in order to achieve the same results.
 
