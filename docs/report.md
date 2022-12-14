@@ -27,11 +27,11 @@ Currently, the most efficient MPPT systems are those that employ a hybrid model 
 
 ## 3. Novelty & Rationale
 
-Rather than coming up with a new approach for MPPT, we decided to spend time assessing the feasibility of existing approaches (namely ANN and FIS when compared to classical MPPT methods) so that we can better understand their benefits and limitations. This venture should be successful, as there is a lot of existing literature that we can pull design ideas from.
+Rather than coming up with a new approach for MPPT, we decided to spend time assessing the feasibility of existing approaches (namely ANN and FIS when compared to classical MPPT methods) so that we can better understand their benefits and limitations. MPPT is a broad topic, and many academic papers do not clearly outline the fundamental reasons one might have in choosing a given method over another. At the end of this study, we hope to be able to aid in the process of helping other individuals interested in this topic by providing concrete data and analysis that would better inform design decisions in the area of maximum power-point tracking. This venture should be successful, as there is a lot of existing literature that we can pull design ideas from.
 
 ## 4. Potential Impact
 
-If the project is successful, we will have generated added justification as to the use of artifical intelligence in MPPT use-cases. With the design of our neural network scheme, we will have also created a low-cost embedded irradiance sensor that can be used as a way to coordinate MPPT across large solar farms where conditions might not be entirely uniform due to environmental conditions (cloud-cover, etc).
+If the project is successful, we will have generated added justification as to the use of artifical intelligence in MPPT use-cases. Not much documentation exists that provides numerically driven comparisons of different MPPT architectures, and we hope to bridge this gap with the findings that we discover in this project. In addition, with the design of our neural network scheme, we will have also created a low-cost embedded irradiance sensor that can be used as a way to coordinate MPPT across large solar farms where conditions might not be entirely uniform due to environmental conditions (cloud-cover, etc).
 
 ## 5. Challenges
 
